@@ -1,0 +1,35 @@
+
+[class*=btn-] {
+    // background-color: none;
+    position: relative;
+    
+    margin: 0 40px;
+    margin-top: 40vh;
+    background-color: lighten($colorHoverLink, 18%);
+    // background-color: $colorTitle;
+    
+    width: 220px;
+    height: 60px;
+    font-family: $fontText;
+    font-size: 1.3rem;
+    font-weight: 500;
+    // text-transform: lowercase;
+    text-decoration: none;
+    color: darken($colorTitle, 50%);
+    // border: solid 1px $colorText;
+    // border-radius: 16px;
+    border-style: none;
+    border-radius: 50px;
+    box-shadow: 10px 10px 20px darken($colorHoverLink, 40%);
+    // -webkit-border-radius: 85px;
+    // border-radius: 85px;
+    // background: $colorTitle;
+    // -webkit-box-shadow: 14px 14px 20px #b6bccd, -14px -14px 20px #ecf4ff;
+    // box-shadow: 14px 14px 20px #b6bccd, -14px -14px 20px #ecf4ff;
+    cursor: pointer;
+    &:hover{
+        background-color: lighten($colorHoverLink, 8%);
+        color: darken($colorTitle, 60%);
+    }
+    
+}

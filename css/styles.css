@@ -1,0 +1,259 @@
+.switch {
+  position: relative;
+  display: inline-block;
+  margin: 300px 5px;
+}
+
+.switch > span {
+  position: absolute;
+  top: 14px;
+  pointer-events: none;
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  width: 50%;
+  text-align: center;
+}
+
+input.check-toggle-round-flat:checked ~ .off {
+  color: rgb(170, 68, 68);
+}
+
+input.check-toggle-round-flat:checked ~ .on {
+  color: rgb(233, 233, 233);
+}
+
+.switch > span.on {
+  left: 0;
+  padding-left: 2px;
+  color: rgb(170, 68, 68);
+}
+
+.switch > span.off {
+  right: 0;
+  padding-right: 4px;
+  color: rgb(233, 233, 233);
+}
+
+.check-toggle {
+  position: absolute;
+  margin-left: -9999px;
+  visibility: hidden;
+}
+
+.check-toggle + label {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input.check-toggle-round-flat + label {
+  padding: 4px;
+  margin-top: 2px;
+  width: 95px;
+  height: 32px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:after {
+  top: 4px;
+  left: 4px;
+  bottom: 4px;
+  width: 48px;
+  background-color: rgb(233, 233, 233);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: margin 0.4s;
+  -moz-transition: margin 0.4s;
+  -o-transition: margin 0.4s;
+  transition: margin 0.4s;
+}
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 44px;
+}
+
+[class*=btn-] {
+  position: relative;
+  margin: 0 40px;
+  margin-top: 40vh;
+  background-color: #b4d1ec;
+  width: 220px;
+  height: 60px;
+  font-family: "Roboto";
+  font-size: 1.3rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #6a6a6a;
+  border-style: none;
+  border-radius: 50px;
+  box-shadow: 10px 10px 20px #183d61;
+  cursor: pointer;
+}
+[class*=btn-]:hover {
+  background-color: #8cb8e2;
+  color: #505050;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* padding: 0; */
+}
+body h1 {
+  font-size: 2rem;
+}
+body h1:hover {
+  color: #d0d0d0;
+}
+body a {
+  text-decoration: none;
+}
+
+.body-index {
+  background-image: url(/imgs/mountain02.png);
+  background-position: bottom;
+  object-fit: cover;
+  height: 100vh;
+}
+.body-index h1 {
+  position: relative;
+  font-size: 6rem;
+  margin-left: 24vw;
+}
+
+.body-home {
+  background-image: url(/imgs/mountain02.png);
+  background-position: bottom;
+  object-fit: cover;
+  height: 100vh;
+}
+.body-home h1:hover {
+  color: #d0d0d0;
+}
+
+.body-about {
+  /* background-image: image(); */
+  background-image: url(/imgs/mountain04.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+.body-portfolio {
+  background-image: url(/imgs/mountain05.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+.body-contact {
+  background-image: url(/imgs/mountain03.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+header {
+  width: 100vw;
+  height: 20vh;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: fit-content;
+  margin-top: 2%;
+  margin-left: 50px;
+}
+
+.title {
+  font-size: 4rem;
+  color: rgb(233, 233, 233);
+}
+
+.slogan {
+  font-family: "Roboto";
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: 200;
+  color: rgb(233, 233, 233);
+}
+
+.nav-menu {
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.nav-menu ul li {
+  margin: 10px 20px;
+  list-style: none;
+  border-style: none;
+}
+
+.nav-menu ul li a {
+  font-family: "Georgia";
+  font-size: 1rem;
+  color: rgb(209, 209, 209);
+  text-decoration: none;
+}
+.nav-menu ul li a:hover {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  color: rgb(107, 164, 218);
+}
+.nav-menu ul li a:click {
+  color: #d0d0d0;
+}
+
+footer {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin-top: 90vh;
+}
+
+footer h4 {
+  color: rgb(233, 233, 233);
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
