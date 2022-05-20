@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
 
 @import 'variables';
 
-@import 'switch-es-en';
+// @import 'switch-es-en';
 @import 'buttons';
 
 
@@ -9,6 +11,7 @@
     margin: 0;
     padding: 0;
     font-size: 20px;
+    font-family: $fontText;
 }
 
 body{
@@ -22,6 +25,7 @@ body{
         font-size: 2rem;
         &:hover{
             color: darken($colorTitle, 10%);
+            cursor: pointer;
         }
     }
     
@@ -31,7 +35,7 @@ body{
 }
 .body-index{
     
-    background-image: url(/imgs/mountain02.png);
+    background-image: url(/imgs/DJI_0607-Completa.jpg);
     background-position: bottom;
     object-fit: cover;
     height: 100vh;
@@ -45,7 +49,7 @@ body{
 }
 
 .body-home{
-    background-image: url(/imgs/mountain02.png);
+    background-image: url(/imgs/DJI_0607-Completa.jpg);
     background-position: bottom;
     object-fit: cover;
     height: 100vh;
@@ -102,6 +106,9 @@ header div{
 
 .title{
     // margin: 10px;
+    font-family: $fontPrimary;
+    
+    
     font-size: 4rem;
     color: $colorTitle;
     

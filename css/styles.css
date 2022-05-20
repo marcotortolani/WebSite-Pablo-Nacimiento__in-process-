@@ -1,97 +1,5 @@
-.switch {
-  position: relative;
-  display: inline-block;
-  margin: 300px 5px;
-}
-
-.switch > span {
-  position: absolute;
-  top: 14px;
-  pointer-events: none;
-  font-family: "Roboto";
-  font-weight: bold;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  width: 50%;
-  text-align: center;
-}
-
-input.check-toggle-round-flat:checked ~ .off {
-  color: rgb(170, 68, 68);
-}
-
-input.check-toggle-round-flat:checked ~ .on {
-  color: rgb(233, 233, 233);
-}
-
-.switch > span.on {
-  left: 0;
-  padding-left: 2px;
-  color: rgb(170, 68, 68);
-}
-
-.switch > span.off {
-  right: 0;
-  padding-right: 4px;
-  color: rgb(233, 233, 233);
-}
-
-.check-toggle {
-  position: absolute;
-  margin-left: -9999px;
-  visibility: hidden;
-}
-
-.check-toggle + label {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  outline: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-input.check-toggle-round-flat + label {
-  padding: 4px;
-  margin-top: 2px;
-  width: 95px;
-  height: 32px;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
-  border-radius: 60px;
-}
-
-input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
-  display: block;
-  position: absolute;
-  content: "";
-}
-
-input.check-toggle-round-flat + label:after {
-  top: 4px;
-  left: 4px;
-  bottom: 4px;
-  width: 48px;
-  background-color: rgb(233, 233, 233);
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-  -ms-border-radius: 60px;
-  -o-border-radius: 60px;
-  border-radius: 60px;
-  -webkit-transition: margin 0.4s;
-  -moz-transition: margin 0.4s;
-  -o-transition: margin 0.4s;
-  transition: margin 0.4s;
-}
-
-input.check-toggle-round-flat:checked + label:after {
-  margin-left: 44px;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
 [class*=btn-] {
   position: relative;
   margin: 0 40px;
@@ -99,7 +7,7 @@ input.check-toggle-round-flat:checked + label:after {
   background-color: #b4d1ec;
   width: 220px;
   height: 60px;
-  font-family: "Roboto";
+  font-family: "Avenir";
   font-size: 1.3rem;
   font-weight: 500;
   text-decoration: none;
@@ -118,6 +26,7 @@ input.check-toggle-round-flat:checked + label:after {
   margin: 0;
   padding: 0;
   font-size: 20px;
+  font-family: "Avenir";
 }
 
 body {
@@ -131,13 +40,14 @@ body h1 {
 }
 body h1:hover {
   color: #d0d0d0;
+  cursor: pointer;
 }
 body a {
   text-decoration: none;
 }
 
 .body-index {
-  background-image: url(/imgs/mountain02.png);
+  background-image: url(/imgs/DJI_0607-Completa.jpg);
   background-position: bottom;
   object-fit: cover;
   height: 100vh;
@@ -149,7 +59,7 @@ body a {
 }
 
 .body-home {
-  background-image: url(/imgs/mountain02.png);
+  background-image: url(/imgs/DJI_0607-Completa.jpg);
   background-position: bottom;
   object-fit: cover;
   height: 100vh;
@@ -198,12 +108,13 @@ header div {
 }
 
 .title {
+  font-family: "El Messiri", sans-serif;
   font-size: 4rem;
   color: rgb(233, 233, 233);
 }
 
 .slogan {
-  font-family: "Roboto";
+  font-family: "Avenir";
   font-size: 1.6rem;
   font-style: italic;
   font-weight: 200;
@@ -228,7 +139,7 @@ header div {
 }
 
 .nav-menu ul li a {
-  font-family: "Georgia";
+  font-family: "El Messiri", sans-serif;
   font-size: 1rem;
   color: rgb(209, 209, 209);
   text-decoration: none;
