@@ -133,13 +133,14 @@ body{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin-bottom: 50px;
 
         & li{
             margin: 10px 20px;
             list-style: none;
             border-style: none;
         
-                margin-right: 0;
+            margin-right: 0;
         
             & a{
                 font-family: $fontPrimary;
@@ -171,7 +172,7 @@ body{
 .menu-mobile {
     display: none;
     //display: flex;
-    margin: 40px 80px;
+    margin: 150px 80px;
     
 
 }
@@ -256,7 +257,7 @@ body{
       height: 80vh;
       //max-height: 250px;
       background-color: rgba(darken($colorText, 10%), 50%);
-      opacity: 60%;
+      opacity: 100%;
       //padding: 10px 30px;
       padding-top: 20vh;
       flex-direction: column;
@@ -273,7 +274,7 @@ body{
       /* display: flex;
       justify-content: space-between;
       align-items: center; */
-    margin-top: 10vh;
+        margin-top: 5vh;
       list-style: none;
       height: 100%;
       display: flex;
@@ -292,7 +293,7 @@ body{
       border: 1px solid transparent; /* le da grosor, solido y transparencia para que las palabras queden quietas al hacer el hover */
       transition: 0.3s;
       margin-bottom: 25px;
-      color: rgb(129, 196, 255);
+      //color: rgb(129, 196, 255);
       
 
 
@@ -309,7 +310,8 @@ body{
       text-decoration: none;
       font-size: 1.2em;
       color: $colorNavLinks;
-      color: rgb(129, 196, 255);
+      //color: rgb(151, 205, 253);
+      color: rgb(255, 255, 255);
       font-family: $fontPrimary; 
       font-weight: 500;
 
@@ -352,7 +354,7 @@ footer{
 @media screen and (max-width: 1400px) {
     .nav-menu{
         //margin-top: 3%;
-        margin-right: 0%;
+        margin-right: 5vh;
     }
 }
 
@@ -361,16 +363,16 @@ footer{
     // :root{
     // --padding-x: 50px;
     // }
-    body {
-        & header {
-            //justify-content: space-around;
-            & div {
-                margin-top: 30px;
-            }
-        }
-    }
+    // body {
+    //     & header {
+    //         //justify-content: space-around;
+    //         // & div {
+    //         //     //margin-top: 30px;
+    //         // }
+    //     }
+    // }
     
-   
+    
     .nav-menu ul li{
         margin: 10px 10px;
         list-style: none;
@@ -385,6 +387,7 @@ footer{
         flex-direction:column;
         width:40px;
         cursor:pointer;   
+        margin-bottom: 140px;
     }
     
    

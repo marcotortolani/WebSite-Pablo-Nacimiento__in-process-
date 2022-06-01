@@ -374,17 +374,32 @@ form .submit:active {
   height: 10vh;
   padding-top: 20px;
 }
+.body-about .nav-menu ul {
+  margin-bottom: 20px;
+}
 .body-about .nav-menu a {
   color: #383838;
 }
 .body-about .switch input.check-toggle-round-flat:checked ~ .on {
-  color: rgb(107, 164, 218);
+  color: white;
 }
 .body-about .switch input.check-toggle-round-flat:checked ~ .off {
-  color: #6b6b6b;
+  color: #383838;
+}
+.body-about .switch > span.off {
+  color: white;
 }
 .body-about .switch > span.on {
-  color: #6b6b6b;
+  color: #383838;
+}
+.body-about input.check-toggle-round-flat + label:after {
+  background-color: #9d9d9d;
+}
+.body-about .menu-mobile span {
+  background: #383838;
+}
+.body-about .menu-desplegable ul li a {
+  color: rgb(255, 255, 255);
 }
 
 .img-about {
@@ -675,6 +690,7 @@ body header .slogan {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 .nav-menu ul li {
   margin: 10px 20px;
@@ -699,7 +715,7 @@ body header .slogan {
 /* MENU HAMBURGUESA DESACTIVADO Y SETEO*/
 .menu-mobile {
   display: none;
-  margin: 40px 80px;
+  margin: 150px 80px;
 }
 
 .menu-desplegable {
@@ -766,7 +782,7 @@ body header .slogan {
   width: 100vw;
   height: 80vh;
   background-color: rgba(13, 13, 14, 0.5);
-  opacity: 60%;
+  opacity: 100%;
   padding-top: 20vh;
   flex-direction: column;
   justify-content: space-between;
@@ -777,7 +793,7 @@ body header .slogan {
   /* display: flex;
   justify-content: space-between;
   align-items: center; */
-  margin-top: 10vh;
+  margin-top: 5vh;
   list-style: none;
   height: 100%;
   display: flex;
@@ -794,7 +810,6 @@ body header .slogan {
   /* le da grosor, solido y transparencia para que las palabras queden quietas al hacer el hover */
   transition: 0.3s;
   margin-bottom: 25px;
-  color: rgb(129, 196, 255);
 }
 
 .menu-desplegable ul li:hover {
@@ -807,7 +822,7 @@ body header .slogan {
   text-decoration: none;
   font-size: 1.2em;
   color: rgb(209, 209, 209);
-  color: rgb(129, 196, 255);
+  color: rgb(255, 255, 255);
   font-family: "El Messiri", sans-serif;
   font-weight: 500;
 }
@@ -831,14 +846,10 @@ footer h4 {
 
 @media screen and (max-width: 1400px) {
   .nav-menu {
-    margin-right: 0%;
+    margin-right: 5vh;
   }
 }
 @media screen and (max-width: 1200px) {
-  body header div {
-    margin-top: 30px;
-  }
-
   .nav-menu ul li {
     margin: 10px 10px;
     list-style: none;
@@ -854,6 +865,7 @@ footer h4 {
     flex-direction: column;
     width: 40px;
     cursor: pointer;
+    margin-bottom: 140px;
   }
 }
 @media screen and (max-width: 768px) {

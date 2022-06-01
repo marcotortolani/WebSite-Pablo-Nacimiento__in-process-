@@ -38,23 +38,42 @@
     }
     
     & .nav-menu{
-        
+        & ul{
+            margin-bottom: 20px;
+        }
         & a{
             color: darken($colorNavLinks, 60%);
         }
     }
     .switch{
         & input.check-toggle-round-flat:checked ~ .on {
-            color: $colorHoverLink;
+            color: lighten($colorTitle, 20%);
           }
         & input.check-toggle-round-flat:checked ~ .off {
-            color: darken($colorNavLinks, 40);
+            color: darken($colorNavLinks, 60);
           }
     }
-    .switch > span.on {
-        color: darken($colorNavLinks, 40);
+    
+    .switch > span.off {
+        color: lighten($colorTitle, 20%);
     }
+    .switch > span.on {
+        color: darken($colorNavLinks, 60);
+    }
+    input.check-toggle-round-flat + label:after {
+        background-color: darken($colorTitle, 30%);
+    }
+
+
+    .menu-mobile span{
+        background: darken($colorNavLinks, 60%);
+     }
+     
+     .menu-desplegable ul li a{
+         color: rgb(255, 255, 255);
+     }
 }
+
 
 .img-about{
     display: flex;
