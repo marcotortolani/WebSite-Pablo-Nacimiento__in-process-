@@ -1,0 +1,101 @@
+@import 'variables';
+
+.body-contact{
+    background-image: url(/imgs/mountain03.jpg);
+    background-position: top;
+    background-size: cover;
+}
+
+
+form {
+    margin: auto;
+    border-radius: 20%;
+    width: auto;
+    margin-bottom: 20vh;
+    //min-width: 300px;
+    height: 50vh;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    
+
+    & input, textarea{
+        width: 30vw;
+        min-width: 350px;
+        height: 40px;
+        margin-top: 30px;
+        padding: 0 24px;
+        border-radius: 16px;
+        font-family: $fontText;
+        font-size: 1rem;
+        word-spacing: $wordSpace;
+        letter-spacing: $letterSpace;
+        background-color: rgba($colorTitle, $alpha: 0.5);
+        cursor: text;
+
+        box-shadow: 10px 5px 32px 0px rgba(0,0,0,0.42);
+        -webkit-box-shadow: 10px 5px 32px 0px rgba(0,0,0,0.42);
+        -moz-box-shadow: 10px 5px 32px 0px rgba(0,0,0,0.42);
+        
+        &:focus-visible{
+            outline: 1px solid rgba($color: #000000, $alpha: 0);
+            background-color: lighten($colorHoverLink , 30);
+        }    
+    }    
+
+    
+    & div {
+        width: auto;
+        height: 0px;
+        margin: auto;
+        position: relative;
+        top: -2px;
+        left: 25px;
+        font-size: 0.9rem;
+    }
+
+    & textarea {
+        height: 30vh;
+        overflow-wrap: break-word;
+        padding: 20px 24px;
+        color: $colorText;
+        text-align: justify;
+        word-break: keep-all;
+        
+        &::selection {
+            background-color: lighten($colorText, 60);
+            color: lighten($colorText, 90);
+        }
+    }
+
+    & .submit {
+        width: 10vw;
+        min-width: 130px;
+        height: 8vh;
+        margin: auto;
+        margin-top: 40px;
+        padding: 0;
+        cursor: pointer;
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+        background-color: rgba($colorTitle, $alpha: 0.8);
+        
+        &:hover {
+            background-color: darken($colorTitle, 50);
+            color: lighten($colorTitle, 50);
+        }    
+        &:active {
+           transform: scale(0.9);
+        }
+    }
+}
+
+.invalid {
+    color: rgb(219, 33, 0);
+}
+.error {
+    border: solid 3px rgb(255, 91, 91);
+}
+

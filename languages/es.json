@@ -1,0 +1,20 @@
+{
+    "navbar": {
+        "home": "inicio",
+        "about": "acerca",
+        "portfolio": "portfolio",
+        "contact": "contacto",
+        "courses": "cursos"
+    },
+    "profile": {
+        "rol": "Fotógrafo y Creador de Contenido",
+        "description": "Soy un apasionado por la naturaleza y el lifestyle, pero también trabajo para marcas generando contenido de relevancia. <br> Desde el año 2015 convertí esta gran pasión en mi trabajo profesional, me equipo y capacito constantemente para poder ofrecer siempre lo mejor."
+    },
+    "form": {
+        "name": "1Juan Pérez",
+        "email": "1juanperez@correo.com",
+        "subject": "1Asunto",
+        "message": "1Escriba su mensaje...",
+        "submit": "1Enviar"
+    }
+}

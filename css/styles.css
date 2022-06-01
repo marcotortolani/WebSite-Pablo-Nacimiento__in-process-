@@ -1,5 +1,237 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap");
+/*
+
+  Con este reset vamos a resolver:
+    👉 Unificar el uso de Custom Properties
+    👉 Problemas de box-model más generales
+    👉 Problemas con imagenes, vídeos e iconos svg
+    👉 Problemas con tipografías y etiquetas input en formularios
+    👉 Unificar la tipografía de todas las etiquetas de una web
+
+*/
+/* Aquí definimos las Custom properties */
+:root {
+  --color-primario: #181818;
+  --color-secundario: #f0f0f0;
+  /* Tipografía */
+  --tipo-principal: Helvetica, Arial, sans-serif;
+  --tipo-secundaria: Verdana;
+}
+
+/* Las adaptamos al modo oscuro */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primario: #f0f0f0;
+    --color-secundario: #181818;
+  }
+}
+/* Opcional */
+/* Configuramos si un usuario ha activado el modo alto contraste. (WD) */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primario: black;
+    --color-secundario: white;
+  }
+}
+/* Opcional */
+/* Desactivamos los animations en el caso de que el usuario haya configurado el modo sin animation */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+
+/* Evitamos problemas con las imagenes */
+img, picture, video, iframe, figure {
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  /* opcional */
+  object-fit: cover;
+  /* opcional */
+  object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li {
+  list-style-type: none;
+}
+
+/* Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+  font-size: 1em;
+  font-weight: inherit;
+  font-style: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* Configuramos el texto que seleccionamos */
+::selection {
+  background-color: var(--negro);
+  color: var(--blanco);
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font-family: inherit;
+  font-size: inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+  /* opcional */
+  appearance: none;
+}
+
+/* Reseteamos las tablas */
+table, tr, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Evitamos problemas con los SVG */
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
+}
+
+/* (Probándolo, no usar en producción) En el caso de añadir una  */
+/* p svg{
+  display: inline;
+  width: initial;
+} */
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--tipo-principal);
+  color: var(--negro);
+  /* opcional */
+  line-height: 1.4em;
+  /* opcional */
+  hyphens: auto;
+  /* opcional */
+  font-smooth: always;
+  /* opcional */
+  -webkit-font-smoothing: antialiased;
+  /* opcional */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.switch {
+  position: relative;
+  margin-right: 4vw;
+  margin-top: 0px;
+  margin-left: 20px;
+}
+
+.switch > span {
+  position: absolute;
+  width: 50%;
+  pointer-events: none;
+  font-family: "El Messiri", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  text-decoration: none;
+  text-align: center;
+  text-transform: lowercase;
+}
+
+input.check-toggle-round-flat:checked ~ .on {
+  color: rgb(107, 164, 218);
+}
+
+input.check-toggle-round-flat:checked ~ .off {
+  color: rgb(209, 209, 209);
+}
+
+.switch > span.off {
+  left: 0;
+  padding-left: 0px;
+  color: rgb(107, 164, 218);
+}
+
+.switch > span.on {
+  right: 0;
+  padding-right: 0px;
+  color: rgb(209, 209, 209);
+}
+
+input.check-toggle-round-flat + label {
+  width: 60px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+}
+
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+  display: block;
+  position: absolute;
+  content: "";
+}
+
+input.check-toggle-round-flat + label:after {
+  top: 0px;
+  left: 0px;
+  bottom: 2px;
+  width: 30px;
+  background-color: rgb(233, 233, 233);
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  -ms-border-radius: 60px;
+  -o-border-radius: 60px;
+  border-radius: 60px;
+  -webkit-transition: margin 0.4s;
+  -moz-transition: margin 0.4s;
+  -o-transition: margin 0.4s;
+  transition: margin 0.4s;
+}
+
+input.check-toggle-round-flat:checked + label:after {
+  margin-left: 30px;
+}
+
 [class*=btn-] {
   position: relative;
   margin: 0 40px;
@@ -22,6 +254,336 @@
   color: #505050;
 }
 
+.body-contact {
+  background-image: url(/imgs/mountain03.jpg);
+  background-position: top;
+  background-size: cover;
+}
+
+form {
+  margin: auto;
+  border-radius: 20%;
+  width: auto;
+  margin-bottom: 20vh;
+  height: 50vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+}
+form input, form textarea {
+  width: 30vw;
+  min-width: 350px;
+  height: 40px;
+  margin-top: 30px;
+  padding: 0 24px;
+  border-radius: 16px;
+  font-family: "Avenir";
+  font-size: 1rem;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  background-color: rgba(233, 233, 233, 0.5);
+  cursor: text;
+  box-shadow: 10px 5px 32px 0px rgba(0, 0, 0, 0.42);
+  -webkit-box-shadow: 10px 5px 32px 0px rgba(0, 0, 0, 0.42);
+  -moz-box-shadow: 10px 5px 32px 0px rgba(0, 0, 0, 0.42);
+}
+form input:focus-visible, form textarea:focus-visible {
+  outline: 1px solid rgba(0, 0, 0, 0);
+  background-color: #e5eff9;
+}
+form div {
+  width: auto;
+  height: 0px;
+  margin: auto;
+  position: relative;
+  top: -2px;
+  left: 25px;
+  font-size: 0.9rem;
+}
+form textarea {
+  height: 30vh;
+  overflow-wrap: break-word;
+  padding: 20px 24px;
+  color: rgb(37, 38, 41);
+  text-align: justify;
+  word-break: keep-all;
+}
+form textarea::selection {
+  background-color: #bdbec3;
+  color: white;
+}
+form .submit {
+  width: 10vw;
+  min-width: 130px;
+  height: 8vh;
+  margin: auto;
+  margin-top: 40px;
+  padding: 0;
+  cursor: pointer;
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  background-color: rgba(233, 233, 233, 0.8);
+}
+form .submit:hover {
+  background-color: #6a6a6a;
+  color: white;
+}
+form .submit:active {
+  transform: scale(0.9);
+}
+
+.invalid {
+  color: rgb(219, 33, 0);
+}
+
+.error {
+  border: solid 3px rgb(255, 91, 91);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.body-about {
+  background: rgb(230, 230, 230);
+  z-index: 2;
+  display: flex;
+}
+.body-about .title {
+  color: #505050;
+  margin-left: 2px;
+}
+.body-about .title:hover {
+  color: #767676;
+  text-shadow: 1px 1px 10px rgb(143, 142, 142);
+  cursor: pointer;
+}
+.body-about header {
+  background-color: rgba(231, 231, 231, 0.8);
+  height: 10vh;
+  padding-top: 20px;
+}
+.body-about .nav-menu a {
+  color: #383838;
+}
+.body-about .switch input.check-toggle-round-flat:checked ~ .on {
+  color: rgb(107, 164, 218);
+}
+.body-about .switch input.check-toggle-round-flat:checked ~ .off {
+  color: #6b6b6b;
+}
+.body-about .switch > span.on {
+  color: #6b6b6b;
+}
+
+.img-about {
+  display: flex;
+  justify-content: center;
+  background-image: url(/imgs/DJI_0607-Completa.jpg);
+  background-position: bottom;
+  margin-top: 12vh;
+  width: 94vw;
+  height: 86vh;
+}
+.img-about .subtitle {
+  position: relative;
+  top: 20vh;
+  font-family: "Avenir";
+  font-size: 5rem;
+  font-style: italic;
+  font-weight: 500;
+  color: rgb(233, 233, 233);
+}
+
+.about-text-img {
+  display: flex;
+  justify-content: center;
+  width: 94vw;
+  margin: 60px 0;
+}
+.about-text-img .about-text-img-1 {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  height: 30%;
+  margin-right: 10px;
+}
+.about-text-img .about-text-img-1 div {
+  width: 20vw;
+}
+.about-text-img .about-text-img-1 div a {
+  margin: 50px 0;
+  font-size: 4rem;
+  color: rgb(214, 120, 12);
+}
+.about-text-img .about-text-img-1 div a:hover {
+  color: rgb(107, 164, 218);
+}
+.about-text-img .about-text-img-1 div p {
+  max-width: 100%;
+  margin-right: 20px;
+}
+.about-text-img .about-text-img-1 img {
+  width: 30vw;
+  height: 70vh;
+}
+.about-text-img .about-text-img-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin-left: 10px;
+}
+.about-text-img .about-text-img-2 img {
+  width: 60vw;
+  height: 450px;
+}
+.about-text-img .about-text-img-2 div {
+  display: flex;
+  margin-top: 20px;
+}
+.about-text-img .about-text-img-2 div .par-1 {
+  margin-right: 10px;
+}
+.about-text-img .about-text-img-2 div .par-2 {
+  margin-left: 10px;
+}
+
+.fondo-imagen {
+  width: 100vw;
+  height: 60vh;
+  background-image: url(/imgs/road_forest_turn_139665_3840x2160.jpg);
+  opacity: 60%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.fondo-imagen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+}
+
+.fondo-imagen * {
+  z-index: 0;
+  position: relative;
+}
+
+.setup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 94vw;
+  margin: 60px 0;
+}
+.setup img {
+  filter: opacity(70%);
+}
+.setup .setup-lista {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+.setup .setup-lista ul {
+  margin: 30px;
+}
+.setup .setup-lista ul li {
+  font-size: 1.5rem;
+}
+
+.about-contact {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 60vh;
+  margin-top: 40px;
+  background-image: url(/imgs/road_forest_turn_139665_3840x2160.jpg);
+  opacity: 90%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.about-contact .contact-btn {
+  width: 15vw;
+  min-width: 240px;
+  height: 6vh;
+  margin-top: 250px;
+  padding: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+  background-color: rgba(233, 233, 233, 0.8);
+  box-shadow: 2px 2px 10px #505050;
+}
+.about-contact .contact-btn:hover {
+  background-color: #6a6a6a;
+  color: white;
+}
+.about-contact .contact-btn:active {
+  transform: scale(0.9);
+}
+
+.about-contact::before {
+  content: "";
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  width: 100vw;
+  height: 20vh;
+  opacity: 20%;
+}
+
+.about-contact * {
+  z-index: 0;
+  position: relative;
+}
+
+.footer-derechos {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  width: 100vw;
+  height: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: #e9e9e9;
+  font-size: 1.1rem;
+}
+.footer-derechos a {
+  color: rgb(107, 164, 218);
+}
+.footer-derechos a:hover {
+  color: rgb(221, 73, 5);
+}
+
+@keyframes desplegable {
+  from {
+    top: -1200px;
+  }
+  to {
+    top: 0px;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -35,45 +597,68 @@ body {
   align-items: center;
   /* padding: 0; */
 }
-body h1 {
-  font-size: 2rem;
+body header {
+  width: 100vw;
+  height: 20vh;
+  padding-bottom: 20px;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  transition: transform 0.4s;
 }
-body h1:hover {
+body header div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  height: fit-content;
+  margin-top: 1%;
+  margin-left: 50px;
+}
+body header .title {
+  margin-top: 20px;
+  font-family: "El Messiri", sans-serif;
+  font-size: 3rem;
+  line-height: 40px;
+  color: rgb(233, 233, 233);
+}
+body header .title:hover {
   color: #d0d0d0;
+  text-shadow: 2px 2px 10px rgb(112, 112, 112);
   cursor: pointer;
 }
-body a {
-  text-decoration: none;
+body header .slogan {
+  margin: 10px 8px;
+  font-family: "Avenir";
+  font-size: 1.4rem;
+  font-style: italic;
+  font-weight: 200;
+  color: rgb(233, 233, 233);
 }
 
-.body-index {
-  background-image: url(/imgs/DJI_0607-Completa.jpg);
-  background-position: bottom;
-  object-fit: cover;
-  height: 100vh;
-}
-.body-index h1 {
-  position: relative;
-  font-size: 6rem;
-  margin-left: 24vw;
+.header-hidden {
+  transform: translateY(-20vh);
+  box-shadow: none;
 }
 
 .body-home {
-  background-image: url(/imgs/DJI_0607-Completa.jpg);
-  background-position: bottom;
+  background-position: center;
   object-fit: cover;
   height: 100vh;
 }
-.body-home h1:hover {
-  color: #d0d0d0;
+
+.img-1 {
+  background-image: url(/imgs/DJI_0607-Completa.jpg);
 }
 
-.body-about {
-  /* background-image: image(); */
-  background-image: url(/imgs/mountain04.png);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
+.img-2 {
+  background-image: url(/imgs/34.jpg);
+}
+
+.img-3 {
+  background-image: url(/imgs/road_forest_turn_139665_3840x2160.jpg);
 }
 
 .body-portfolio {
@@ -82,77 +667,155 @@ body a {
   background-size: cover;
 }
 
-.body-contact {
-  background-image: url(/imgs/mountain03.jpg);
-  background-position: top;
-  background-size: cover;
-}
-
-header {
-  width: 100vw;
-  height: 20vh;
-  z-index: 2;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  position: fixed;
-}
-
-header div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  height: fit-content;
-  margin-top: 2%;
-  margin-left: 50px;
-}
-
-.title {
-  font-family: "El Messiri", sans-serif;
-  font-size: 4rem;
-  color: rgb(233, 233, 233);
-}
-
-.slogan {
-  font-family: "Avenir";
-  font-size: 1.6rem;
-  font-style: italic;
-  font-weight: 200;
-  color: rgb(233, 233, 233);
-}
-
 .nav-menu {
-  margin-top: 3%;
-  margin-right: 5%;
+  margin-top: 6vh;
+  margin-right: 6vh;
 }
-
 .nav-menu ul {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-
 .nav-menu ul li {
   margin: 10px 20px;
   list-style: none;
   border-style: none;
+  margin-right: 0;
 }
-
 .nav-menu ul li a {
   font-family: "El Messiri", sans-serif;
   font-size: 1rem;
+  font-weight: 700;
   color: rgb(209, 209, 209);
   text-decoration: none;
 }
 .nav-menu ul li a:hover {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
   color: rgb(107, 164, 218);
 }
 .nav-menu ul li a:click {
   color: #d0d0d0;
 }
 
+/* MENU HAMBURGUESA DESACTIVADO Y SETEO*/
+.menu-mobile {
+  display: none;
+  margin: 40px 80px;
+}
+
+.menu-desplegable {
+  display: none;
+}
+
+.menu-mobile span {
+  background: rgb(209, 209, 209);
+  border-radius: 10px;
+  height: 5px;
+  min-height: 5px;
+  margin: 7px 0;
+  transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+.menu-mobile span:nth-of-type(1) {
+  width: 50px;
+}
+
+.menu-mobile span:nth-of-type(2) {
+  width: 50px;
+}
+
+.menu-mobile span:nth-of-type(3) {
+  width: 35px;
+}
+
+.menu-mobile input[type=checkbox] {
+  display: none;
+}
+
+.menu-mobile input[type=checkbox]:checked ~ span:nth-of-type(1) {
+  transform-origin: bottom;
+  transform: rotatez(45deg) translate(12px, 12px);
+}
+
+.menu-mobile input[type=checkbox]:checked ~ span:nth-of-type(2) {
+  transform-origin: top;
+  transform: rotatez(-45deg);
+}
+
+.menu-mobile input[type=checkbox]:checked ~ span:nth-of-type(3) {
+  transform-origin: bottom;
+  width: 50%;
+  transform: translate(20px, -12px) rotateZ(45deg) rotateY(90deg);
+}
+
+.menu-mobile input[type=checkbox]:checked ~ .menu-desplegable {
+  display: flex;
+  animation-name: desplegable;
+  animation-duration: 1s;
+  animation-iteration-count: initial;
+  animation-direction: alternate;
+}
+
+/* *****************************************************************/
+.menu-desplegable {
+  /* display: none; */
+  margin-top: 0;
+  position: fixed;
+  /* z-index: 4; */
+  top: 0px;
+  right: 0;
+  width: 100vw;
+  height: 80vh;
+  background-color: rgba(13, 13, 14, 0.5);
+  opacity: 60%;
+  padding-top: 20vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-desplegable ul {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  margin-top: 10vh;
+  list-style: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-desplegable ul li {
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: center; */
+  height: 6vh;
+  border: 1px solid transparent;
+  /* le da grosor, solido y transparencia para que las palabras queden quietas al hacer el hover */
+  transition: 0.3s;
+  margin-bottom: 25px;
+  color: rgb(129, 196, 255);
+}
+
+.menu-desplegable ul li:hover {
+  color: rgb(107, 164, 218);
+  width: fit-content;
+}
+
+.menu-desplegable ul li a {
+  z-index: 5;
+  text-decoration: none;
+  font-size: 1.2em;
+  color: rgb(209, 209, 209);
+  color: rgb(129, 196, 255);
+  font-family: "El Messiri", sans-serif;
+  font-weight: 500;
+}
+.menu-desplegable ul li a :hover {
+  color: rgb(107, 164, 218);
+}
+
+/* **************************************************************** */
 footer {
   z-index: 2;
   display: flex;
@@ -161,10 +824,182 @@ footer {
   position: absolute;
   margin-top: 90vh;
 }
-
 footer h4 {
   color: rgb(233, 233, 233);
   font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1400px) {
+  .nav-menu {
+    margin-right: 0%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  body header div {
+    margin-top: 30px;
+  }
+
+  .nav-menu ul li {
+    margin: 10px 10px;
+    list-style: none;
+    border-style: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .menu-mobile {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 768px) {
+  body header div {
+    align-items: flex-start;
+  }
+
+  /* .menu_desplegable{
+      display: flex;    
+  } */
+  /*    
+  .hero_section-more{
+      margin-bottom: 15vw;
+  }
+
+  .about_section .container .section_title{
+      margin-bottom: 40px;
+      margin-top: 0;
+  }
+
+  .contact_formContainer{
+      grid-template-columns: 1fr;
+      gap: 20px;
+  }
+  .contact_formContainer-img img{
+      max-height: 30vh;
+  }
+  .contact_formContainer-form form button{
+      margin-top: 20px;
+  }
+
+  .contact_section{
+      padding: 20px var(--padding-x);
+      height: calc(94vh - 40px);
+  }
+  .section_title{
+      margin-bottom: 20px;
+      margin-top: 10px;
+  }*/
+}
+@media screen and (max-width: 530px) {
+  body header div {
+    margin-left: 20px;
+  }
+  body header div .title {
+    font-size: 2.5rem;
+    margin-left: 0;
+  }
+  body header div .slogan {
+    font-size: 1rem;
+  }
+
+  .menu-mobile {
+    margin: 40px;
+  }
+
+  /*
+  .contact_section {
+      height: calc(94vh - 40px);
+  }
+  .contact_formContainer{
+      gap: 10px;
+  }
+  .contact_formContainer-form{
+      margin-top: 20px;
+  }
+  .contact_formContainer-form .form_item{
+      height: 75px;
+  }
+  .contact_formContainer-form .form_item label {
+      font-size: 18px;
+      margin-bottom: 10px;
+  }
+  .contact_formContainer-form form button {
+      margin-top: 8px;
+      height: 35px;
+      padding: 0px;
+  }*/
+}
+@media screen and (max-width: 415px) {
+  /*
+  :root {
+      --padding-x: 25px;
+  }
+  .navbar{
+      height: 60px;
+      // height: 2vh;
+      padding: 3vh 30px;
+  }
+  .navbar .logo {
+      justify-content: flex-start;
+  }
+  .navbar .logo img {
+      width: 90%;
+      max-width: 160px;
+      min-width: 100px;
+  }
+
+  .contact_formContainer-form .form_item{
+      width: 90%;
+  }
+  .section_title{
+      font-size: 30px;
+      margin-bottom: 0vh;
+      margin-top: 14px;
+  }
+
+  .container{
+      margin-top: -15px;
+  }
+  .beneficios_card {
+      width: 90%;
+      padding: 20px;
+      gap: 10px;
+      grid-template-rows: 170px auto;
+
+  }
+  .beneficios_card-text h3 {
+      font-size: 23px;
+  }
+
+  .contact_section {
+      height: calc(94vh - 40px);
+  }
+  .contact_formContainer{
+      gap: 10px;
+  }
+  .contact_formContainer-form .form_item label {
+      font-size: 18px;
+      margin-bottom: 4px;
+  }
+  .contact_formContainer-form form button {
+      margin-top: 8px;
+      height: 35px;
+      height: calc();
+      padding: 0px;
+  }*/
+  .menu_desplegable {
+    top: 60px;
+  }
+}
+@media screen and (max-height: 700px) {
+  /*.contact_formContainer-img{
+      display: none;
+  }
+  */
 }
 
 /*# sourceMappingURL=styles.css.map */
