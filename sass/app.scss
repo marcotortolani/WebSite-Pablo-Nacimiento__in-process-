@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Brygada+1918:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 @import 'variables';
 
@@ -336,20 +336,20 @@ body{
 
 
 
-footer{
-    z-index: 2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    margin-top: 90vh;
+// footer{
+//     z-index: 2;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: absolute;
+//     margin-top: 90vh;
     
-    & h4 {
-        color: $colorTitle;
-        font-size: 1.5rem;
-    }
+//     & h4 {
+//         color: $colorTitle;
+//         font-size: 1.5rem;
+//     }
 
-}
+// }
 
 @media screen and (max-width: 1400px) {
     .nav-menu{

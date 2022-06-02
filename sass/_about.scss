@@ -18,6 +18,8 @@
     background: rgb(230, 230, 230);
     z-index: 2;
     display: flex;
+    width: 100vw;
+    height: fit-content;
 
     
     & .title{
@@ -89,7 +91,9 @@
 
     & .subtitle{
         position: relative;
-        top: 20vh;
+        top: 15vh;
+        width: fit-content;
+        height: 10vh;
         //left: 35vw;
 
         //top: 20vh;
@@ -97,9 +101,20 @@
         //margin: 10px 8px;
         font-family: $fontText;
         font-size: 5rem;
+        //font-size: 10rem;
         font-style: italic;
         font-weight: 500;
         color: $colorTitle;
+        cursor: default;
+        opacity: 1;
+        transition: ease-in-out 0.5s;
+
+        &:hover {
+            font-size: 15rem;
+            //font-size: 5rem;
+            //font-weight: 600;
+            opacity: 0;
+        }
     }
 }
 
@@ -115,7 +130,7 @@
         align-items: center;
         width: 50%;
         height: 30%;
-        margin-right: 10px;
+        margin-right: 20px;
         & div{
             width: 20vw;
             & a{
@@ -135,6 +150,14 @@
         & img {
             width: 30vw;
             height: 70vh;
+            border-radius: 20px;
+
+            opacity: 1;
+            transition: ease-in-out 0.4s;
+            &:hover {
+                transform: scale(1.1);
+                opacity: 0.5;
+            } 
         }
 
     }
@@ -142,13 +165,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 50%;
+        width: 50vw;
         //height: 30%;
-        margin-left: 10px;
+        margin-left: 20px;
+        
 
         & img {
-            width: 60vw;
-            height: 450px;    
+            width: 100%;
+            height: 450px;  
+            border-radius: 20px;
+
+            opacity: 1;
+            transition: ease-in-out 0.4s;
+            &:hover {
+                transform: scale(1.1);
+                opacity: 0.5;
+            }  
         }
         & div {
             display: flex;
@@ -229,7 +261,7 @@
     justify-content: center;
     width: 100vw;
     height: 60vh;
-    margin-top: 40px;
+    margin-top: 12%;
     //background-image: url(/imgs/DJI_0607-Completa.jpg);
     background-image: url(/imgs/road_forest_turn_139665_3840x2160.jpg);
     opacity: 90%;
@@ -270,7 +302,7 @@
     top: 20vh;
     left: 0;
     width: 100vw;
-    height: 20vh;
+    height: 80vh;
     //background-color: $colorOrange;
     opacity: 20%;
     //mix-blend-mode: hard-light; /*hace una mezcla de la imagen con la capa de color puesta encima*/
@@ -281,28 +313,91 @@
 }
 
 
-.footer-derechos {
-    
+.footer {
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
+    align-items: center;
+    // align-items: center;
+    position: relative;
+    //top: 100px;
+    bottom: 0;
+    width: 80vw;
+    height: 40vh;
+    // margin-top: 0px;
+    // margin-bottom: 0px;
+    //background-color: rgba($colorTitle, $alpha: 0.5);
+    //background-color: $colorHoverLink;
+
+    & .linea {
+        width: 80vw;
+        height: 2px;
+        margin-top: 90px;
+        background-color: $colorText;
+    }
+
+    & .derechos-menu {
         display: flex;
+        flex-direction: row;
         justify-content: space-around;
-        // align-items: center;
-        position: relative;
-        // bottom: 0;
-        width: 100vw;
-        height: 40px;
-        margin-top: 0px;
-        margin-bottom: 0px;
-        background-color: rgba($colorTitle, $alpha: 1);
-        //background-color: $colorHoverLink;
-        font-size: 1.1rem;
+        justify-content: center;
+        align-items: center;
+
+        width: auto;
+        height: 100%;
+
+        //margin: 20px;
+
+        & h5 {
+            margin:1em;
+            margin-right: 30vw;
+            min-width: fit-content;
+            font-family: $fontUbuntu;
+            font-weight: medium;
+            font-size: 1.2rem;
+        }
 
         & a{
-            color: $colorHoverLink;
+            
+            margin: 1em;
+            //overflow-wrap: normal;
             //color: rgba($colorTitle, $alpha: 0.8);
-
-            &:hover{
-                color: $colorSwitchOn;
+            
+            & img {
+                width: 60px;
+                height: auto;
+                filter: grayscale(100%);
+                            
+                &:hover{
+                    //width: 70px;
+                    transform: scale(1.1);
+                    filter: none;
+                }
+                &:active{
+                    transform: scale(0.9);
+                    filter: none;
+                }
             }
         }
+        & .footer-menu {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            & ul{
+                display: flex;
+                flex-direction: row;
+            }
+            & li {
+                min-width: fit-content;
+            }
+
+            & a:hover {
+                padding-bottom: 10px;                
+            }
+        }
+    }
     
 }
+
+    

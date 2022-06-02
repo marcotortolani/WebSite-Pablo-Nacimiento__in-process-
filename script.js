@@ -46,23 +46,25 @@ window.addEventListener("scroll", (e) => {
 
 let i = 1;
 const $bodyHome = document.querySelector(".body-home");
+const page = window.location.pathname;
 
-let tempBodyImg = setInterval(() => {
-        
-    console.log(i);
-    if (i===3){
-        $bodyHome.classList.remove(`img-${i}`);
-        $bodyHome.classList.add(`img-1`);
-        i=1;
-        
-    }else{
-        $bodyHome.classList.remove(`img-${i}`);
-        $bodyHome.classList.add(`img-${i+1}`);
-        i++;
-    }
+// Chequea que la página sea el inicio, sino no realiza nada
+if (page === "/index.html"){
+    let tempBodyImg = setInterval(() => {
+     
+        if (i===3){
+            $bodyHome.classList.remove(`img-${i}`);
+            $bodyHome.classList.add(`img-1`);
+            i=1;
+         
+        }else{
+            $bodyHome.classList.remove(`img-${i}`);
+            $bodyHome.classList.add(`img-${i+1}`);
+            i++;
+        }
+    }, 5000);
+}
 
-
-}, 5000);
 
 
 //!     Switch Language (Español (switch: off) -> English (switch:on) )
@@ -128,6 +130,10 @@ const $nameField = document.querySelector("[name=name]"),
         $textAreaField = document.querySelector("[name=text-area]");
 
 
+
+
+        
+
 const verifyEmptyField = (e, message) => {
     const field = e.target;
 
@@ -164,12 +170,17 @@ const validateEmailFormat = (e, message) => {
     }
 }
 
+// Chequea que la página sea contacto, sino no realiza nada
+if (page === "/contacto.html"){
+    $nameField.addEventListener("blur", (e) => verifyEmptyField(e, "Por favor, complete el nombre"));
+    $emailField.addEventListener("blur", (e) => verifyEmptyField(e, "Ingrese un email"));
+    $subjectField.addEventListener("blur", (e) => verifyEmptyField(e, "Coloque un asunto"));
+    $textAreaField.addEventListener("blur", (e) => verifyEmptyField(e, "Falta un mensaje"));
+    
+    $emailField.addEventListener("input", (e) => validateEmailFormat(e, "Ingrese un email válido"));
+}
 
-$nameField.addEventListener("blur", (e) => verifyEmptyField(e, "Por favor, complete el nombre"));
-$emailField.addEventListener("blur", (e) => verifyEmptyField(e, "Ingrese un email"));
-$subjectField.addEventListener("blur", (e) => verifyEmptyField(e, "Coloque un asunto"));
-$textAreaField.addEventListener("blur", (e) => verifyEmptyField(e, "Falta un mensaje"));
 
-$emailField.addEventListener("input", (e) => validateEmailFormat(e, "Ingrese un email válido"));
+
 
 
