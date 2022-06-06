@@ -367,14 +367,15 @@
                 width: 60px;
                 height: auto;
                 filter: grayscale(100%);
+                transition: ease-in-out 0.5s;
                             
                 &:hover{
                     //width: 70px;
-                    transform: scale(1.1);
+                    transform: scale(1.3);
                     filter: none;
                 }
                 &:active{
-                    transform: scale(0.9);
+                    transform: scale(0.8);
                     filter: none;
                 }
             }

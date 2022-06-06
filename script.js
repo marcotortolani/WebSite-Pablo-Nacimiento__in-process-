@@ -26,6 +26,13 @@
 // console.log(window.clientInformation.language);
 // console.log(window.clientInformation);
 
+//!     Dark Mode
+
+console.log(window.matchMedia('(prefers-color-scheme: dark)').matches);
+
+
+
+
 //!     Header Navigation Hide when Scrolling
 
 const $headerNav = document.querySelector(".header-nav");
