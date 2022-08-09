@@ -1,10 +1,16 @@
 $colorTitle     : rgb(233, 233, 233);
 $colorNavLinks  : rgb(209, 209, 209); 
-$colorText      : rgb(23, 30, 94);
+$colorText      : rgb(37, 38, 41);
 $colorHoverLink : rgb(107, 164, 218);
-$colorSwitchOn  : rgb(170, 68, 68);
+$colorSwitchOn  : rgb(221, 73, 5);
+$colorOrange    : rgb(214, 120, 12);
 
 // $fontPrimary    : 'Brygada 1918', serif;
 $fontPrimary    : 'El Messiri', sans-serif;
 $fontText       : 'Avenir';
+$fontUbuntu     : 'Ubuntu', sans-serif;
+$wordSpace      : 3px;  // espacios entre palabras
+$letterSpace    : 3px;  // espacios entre letras
 
+
+$headerNavHeight: 20vh;

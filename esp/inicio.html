@@ -4,36 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PH: Pablo Nacimiento</title>
+    <title>Pablo Nacimiento - Photographer & Content Creator</title>
+    <meta name="description" content="Pablo es fotógrafo y creador de contenido.">
+    <meta name="author" content="Marco Tortolani">
+    <meta name="copyright" content="torto.dev">
+    <meta name="robots" content="index, follow">
     <link rel="icon" href="/imgs/iconCamara_5.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body class="body-home">
-    <header>
+<body class="body-home img-1">
+    <header class="header-nav">
         <div>
-            <a href="/index.html"><h1 class="title">Pablo Nacimiento</h1></a>
-            <h2 class="slogan">una mirada a través del lente</h2>
+            <a href="/inicio.html"><h1 class="title">Pablo Nacimiento</h1></a>
+            <!-- <h2 class="slogan">una mirada a través del lente</h2> -->
+            <h2 class="slogan">photographer & content creator</h2>
+            <!-- <h2 class="slogan">Photographer & Content Creator</h2> -->
         </div>
         
 
         <nav class="nav-menu">
             <ul>
-                <li> <a href="../index.html">esp/eng</a> </li> 
-                <li> <a href="/esp/acerca.html">acerca</a> </li>
-                <li> <a href="/esp/portfolio2.html">portfolio</a> </li>
-                <li> <a href="/esp/contacto.html">contacto</a> </li>
-                <li hidden>cursos</li>
+                <li> <a href="/inicio.html">inicio</a> </li> 
+                <li> <a href="/acerca.html">acerca</a> </li>
+                <li> <a href="/portfolio.html">portfolio</a> </li>
+                <li> <a href="/contacto.html">contacto</a> </li>
+                <li > <a href="/cursos.html">cursos</a> </li>
+                <li >
+                    <div class="switch">
+                        <input id="language-toggle" class="check-toggle-round-flat" type="checkbox">
+                        <label for="language-toggle"></label>
+                        <span class="off check-toggle" id="es">ES</span>
+                        <span class="on" id="en">EN</span>
+                    </div>
+                </li>
             </ul>
+
         </nav>
+
+        <label for="menu-mobile" class="menu-mobile">
+            <input type="checkbox" id="menu-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div class="menu-desplegable">
+                <ul>
+                    <li hidden>
+                        <div class="switch">
+                            <input id="language-toggle" class="check-toggle-round-flat" type="checkbox">
+                            <label for="language-toggle" ></label>
+                            <span class="off" id="">ES</span>
+                            <span class="on" id="">EN</span>
+                        </div>
+                    </li>
+                    <li> <a href="/inicio.html">inicio</a> </li> 
+                    <li> <a href="/acerca.html">acerca</a> </li>
+                    <li> <a href="/portfolio.html">portfolio</a> </li>
+                    <li> <a href="/contacto.html">contacto</a> </li>
+                    <li > <a href="/cursos.html">cursos</a> </li>
+                     
+                </ul>
+            </div>
+        </label>
+        
         
 
     </header>
 
-    <footer>
+    <!-- <footer>
         <h4>FOOTER A DEFINIR (REDES SOCIALES???)</h4>
-    </footer>
+    </footer> -->
 
 
-    <script src="/index.js"></script>
+    <script src="/script.js"></script>
 </body>
 </html>

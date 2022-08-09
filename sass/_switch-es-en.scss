@@ -1,66 +1,85 @@
 
 
-
 .switch {
     position: relative;
-    display: inline-block;
-    margin: 300px 5px;
+    
+    //display: inline-block;
+    //margin: 300px 5px;
+    //width: 0px;
+    //top: -3px;
+    //left: -40px;
+    margin-right: 4vw;
+    margin-top: 0px;
+    margin-left: 20px;
+    
   }
   
   .switch > span {
     position: absolute;
-    top: 14px;
-    pointer-events: none;
-    font-family: $fontText;
-    font-weight: bold;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    // text-shadow: 0 1px 0 $colorTitle;
+    //position: relative;
     width: 50%;
+    //top: 0px;
+    pointer-events: none;
+    font-family: $fontPrimary;
+    font-size: 1rem;
+    font-weight: 900;
+    //color: $colorNavLinks;
+    text-decoration: none;
     text-align: center;
+    text-transform: lowercase;
+    
+    // text-shadow: 0 1px 0 $colorTitle;
   }
+
+ 
   
-  input.check-toggle-round-flat:checked ~ .off {
-    color: $colorSwitchOn;
-  }
+  // span .check-toggle {
+      
+  // }
   
   input.check-toggle-round-flat:checked ~ .on {
-    color: $colorTitle;
+    //color: $colorSwitchOn;
+    color: $colorHoverLink;
   }
-  
-  .switch > span.on {
-    left: 0;
-    padding-left: 2px;
-    color: $colorSwitchOn;
+  input.check-toggle-round-flat:checked ~ .off {
+    color: $colorNavLinks;
   }
-  
+
+
   .switch > span.off {
+    left: 0;
+    padding-left: 0px;
+    //color: $colorSwitchOn;
+    color: $colorHoverLink;
+  }
+  .switch > span.on {
     right: 0;
-    padding-right: 4px;
-    color: $colorTitle;
+    padding-right: 0px;
+    color: $colorNavLinks;
   }
+
   
-  .check-toggle {
-    position: absolute;
-    margin-left: -9999px;
-    visibility: hidden;
-  }
-  .check-toggle + label {
-    display: block;
-    position: relative;
-    cursor: pointer;
-    outline: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
+  // input {
+  //   position: absolute;
+  //   margin-left: -9999px;
+  //   visibility: hidden;
+  
+  //   display: block;
+  //   position: relative;
+    
+  //   outline: none;
+  //   -webkit-user-select: none;
+  //   -moz-user-select: none;
+  //   -ms-user-select: none;
+  //   user-select: none;
+  // }
   
   input.check-toggle-round-flat + label {
-    padding: 4px;
-    margin-top: 2px;
-    width: 95px;
-    height: 32px;
+    //padding: 0px;
+    //margin-top: 0px;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
     // background-color: darken($colorHoverLink, 0.5);
     
     -webkit-border-radius: 60px;
@@ -81,8 +100,9 @@
 //     left: 2px;
 //     bottom: 2px;
 //     right: 2px;
-//     color: $colorSwitchOn;
-    
+//     //color: $colorSwitchOn;
+//     color: blueviolet;
+//  
 //     -moz-border-radius: 60px;
 //     -ms-border-radius: 60px;
 //     -o-border-radius: 60px;
@@ -90,16 +110,17 @@
 //   }
 
   input.check-toggle-round-flat + label:after {
-    top: 4px;
-    left: 4px;
-    bottom: 4px;
-    width: 48px;
+    top: 0px;
+    left: 0px;
+    bottom: 2px;
+    width: 30px;
     background-color: $colorTitle;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
     -ms-border-radius: 60px;
     -o-border-radius: 60px;
     border-radius: 60px;
+
     -webkit-transition: margin 0.4s;
     -moz-transition: margin 0.4s;
     -o-transition: margin 0.4s;
@@ -109,5 +130,7 @@
   
     
   input.check-toggle-round-flat:checked + label:after {
-    margin-left: 44px;
+    margin-left: 30px;
   }
+
+
